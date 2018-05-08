@@ -370,7 +370,7 @@ class Session(SessionRedirectMixin):
         self.stream = False
 
         #: SSL Verification default.
-        self.verify = True
+        self.verify = os.environ.get("VALIDATE_SSL_CERTS", True)
 
         #: SSL client certificate default, if String, path to ssl client
         #: cert file (.pem). If Tuple, ('cert', 'key') pair.
