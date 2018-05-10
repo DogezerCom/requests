@@ -370,7 +370,7 @@ class Session(SessionRedirectMixin):
         self.stream = False
 
         #: SSL Verification default.
-        self.verify = bool(os.environ.get("DISABLE_SSL_VALIDATION", ''))
+        self.verify = not bool(os.environ.get("DISABLE_SSL_VALIDATION", ''))
 
         #: SSL client certificate default, if String, path to ssl client
         #: cert file (.pem). If Tuple, ('cert', 'key') pair.
